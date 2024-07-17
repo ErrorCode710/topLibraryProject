@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1 class="Title">Library Project</h1>
+
+    <main>
+      <button class="button button-add" data-open-modal>Add Book</button>
+      <dialog class="modal" data-modal>
+        <form id="form">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="The Hobbit"
+            name="title"
+            required
+          />
+          <label for="author">Author</label>
+          <input
+            type="text"
+            id="author"
+            placeholder="J.R.R. Tolkien"
+            name="author"
+            required
+          />
+          <label for="pages">Pages</label>
+          <input
+            type="number"
+            id="pages"
+            placeholder="295"
+            name="pages"
+            required
+          />
+          <div class="checkbox">
+            <label for="read" class="flex-item">Read</label>
+            <input type="checkbox" id="read" name="read" />
+          </div>
+          <div class="cta">
+            <button class="button" type="submit">Add</button>
+            <button data-close class="button remove">close</button>
+          </div>
+        </form>
+      </dialog>
+      <div id="display" class="grid-container">
+        <!-- <div class="card">
+          <h2>The Hobbit</h2>
+          <p>by J.R.R. Tolkien</p>
+          <p>295 pages</p>
+
+          <p class="read-status">Not read yet</p>
+          <button class="button remove">Remove</button>
+          <button class="button">Read</button>
+        </div> -->
+        <div class="card">
+          <div class="card__title">
+            <h2>The Hobbit</h2>
+          </div>
+          <div class="card__info">
+            <p class="card__author">by J.R.R. Tolkien</p>
+            <p class="card__pages">295 pages</p>
+            <p class="card__read-status">Read</p>
+          </div>
+          <div class="card__cta">
+            <button class="button remove">Remove</button>
+            <button class="button">Read</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/Book/script.js"></script>
+  </body>
+</html>
