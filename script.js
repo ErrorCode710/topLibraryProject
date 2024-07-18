@@ -1,5 +1,3 @@
-// const book1 = new book("The Hobbit", "J.R.R. Tolkien", 295, "not read yet");
-// console.log(book1.info());
 const myLibrary = [];
 
 function Book(title, author, pages, readStatus) {
@@ -16,7 +14,6 @@ function addBookToLibrary(title, author, pages, readStatus) {
   myLibrary.push(book);
 }
 
-// addBookToLibrary("The Hobbit ako", "J.R.R. Tolkien", 295, "not read yet");
 addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 1178, "Read");
 //form
 const form = document.querySelector("form");
