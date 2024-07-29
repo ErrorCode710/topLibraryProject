@@ -1,13 +1,25 @@
 const myLibrary = [];
 
-function Book(title, author, pages, readStatus) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.readStatus = readStatus;
-  this.info = function () {
+// function Book(title, author, pages, readStatus) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.readStatus = readStatus;
+//   this.info = function () {
+//     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.readStatus}`;
+//   };
+// }
+
+class Book {
+  constructor(title, author, pages, readStatus) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.readStatus = readStatus;
+  }
+  info() {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.readStatus}`;
-  };
+  }
 }
 function addBookToLibrary(title, author, pages, readStatus) {
   let book = new Book(title, author, pages, readStatus);
@@ -45,7 +57,7 @@ openModal.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
   modal.close();
 });
-
+//Soon we will fix this redundant code
 function displayBooks() {
   const display = document.querySelector("#display");
   display.innerHTML = "";
@@ -73,8 +85,6 @@ function displayBooks() {
     p1.classList.add("card__pages");
     p2.classList.add("card__read-status");
 
-    divCta.classList.add("card__cta");
-
     readButton.classList.add("button");
     button.classList.add("button", "remove");
 
@@ -91,12 +101,7 @@ function displayBooks() {
     }
 
     readButton.addEventListener("click", () => {
-      const checker = myLibrary[myLibrary.indexOf(book)].readStatus;
-      if (checker == "Read") {
-        book.readStatus = "Unread";
-      } else {
-        book.readStatus = "Read";
-      }
+      book.readStatus = book.readStatus === "Read" ? "Unread" : "Read"; //
       displayBooks();
     });
 
